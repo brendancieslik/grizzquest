@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Monsters>
+
+	<Monster Name="Template. This will be the name of the monster">
+		<statHealth value="100">
+		</statHealth>
+		<statDamage value="100">
+		<description text="This will describe the monster to the player">
+		</description>
+		<threat value="0">
+		</threat>
+	</Monster>
+	<Monster Name="Giant Rat">
+		<statHealth value="5">
+		</statHealth>
+		<statDamage value="1">
+		</stateDamage>
+		<description text="A huge greasy rat. Gross!">
+		</description>
+		<threat value="1">
+		</threat>
+	</Monster>
+	<Monster Name="Goblin">
+		<statHealth value="20">
+		</statHealth>
+		<statDamage value="10">
+		</statDamage>
+		<description text="A small goblin wielding a dagger.">
+		</description>
+		<threat value="2">
+		</threat>
+	</Monster>
+	<Monster Name="Bandit">
+		<statHealth value="30">
+		</statHealth>
+		<statDamage value="10">
+		</statDamage>
+		<description text="A scarred man brandishing a short-sword.">
+		</description>
+		<threat value="3">
+		</threat>
+	</Monster>
+	<Monster Name="Bear">
+		<statHealth value="50">
+		</statHealth>
+		<statDamage value="12">
+		</statDamage>
+		<description text="A fearsome grizzly bear.">
+		</description>
+		<threat value="4">
+		</threat>
+	</Monster>
+	<Monster Name="Golem">
+		<statHealth value="75">
+		</statHealth>
+		<statDamage value="25">
+		</statDamage>
+		<description text="A massive golem made of clay towers before you.">
+		</description>
+		<threat value="5">
+		</threat>
+		
