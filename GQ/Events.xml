@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Events>
+  
+  <Event text="Template.">
+    <option text="This describes the first option available.">
+      <outcome chance="25" text="This happens if you roll a 1-25. You will get +1 STR" >
+        <reward type="str" value="1"></reward>
+      </outcome>
+      <outcome chance="25" text="This happens if you roll a 25-50. You will lose 1 hp, but get 1 DEX">
+        <reward type="hp" value="-1"></reward>
+        <reward type="dex" value="1"></reward>
+      </outcome>
+      <outcome chance="50" text="This happens if you roll a 50-100. You will get an item called Item Template" >
+        <reward type="item" value="Item Template"></reward>
+      </outcome>
+    </option>
+    <option text="Here is the second option. You need 6 Str for this.">
+      <requirement type="str" value="6" />
+      <outcome chance="100" text="Nothing happens. Lame!" />
+    </option>
+    <option text="This option starts a fight with a Cardboard Cutout">
+      <outcome chance="100" text="Battle!" battlevalue="Cardboard Cutout">
+      </outcome>
+    </option>
+  </Event>
+  
+  
+  <Event text="You come across an old man laying motionlesss. What do you want to do?">
+    <option text="Shake him awake.">
+      <outcome chance="70" text="&quot;Heavens thank you! I must have nodded off again. Have some of my bread,&quot; the man replies." >
+          <reward type="hp" value ="2"></reward>
+      </outcome>
+      <outcome chance="30" text="As you put your hand on his shoulder, the necrotic flesh melts away. You dont feel so good." >
+        <reward type="maxhp" value="-1"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore him.">
+      <outcome chance="100" text="You continue on your way."/>  
+    </option>
+  </Event>
+  <Event text="A wild event appears.">
+    <option text="Throw a pokeball.">
+      <outcome chance="40" text="You throw the pokeball. The Event was caught!" >
+        <reward type="item" />
+      </outcome>      
+      <outcome chance="60" text="You throw the pokeball. But it failed." />
+    </option>
+    <option text="Battle it!">
+      <outcome chance="100" text="The event attacks." battlevalue="Charmander">
+        <reward type="item" value="Gym Badge" />
+      </outcome>
+    </option>
+  </Event>
+  <Event text="A goblin attacks">
+    <option text="Fight.">
+      <outcome chance="100" text="Battle!" battlevalue="Goblin">        
+      </outcome>
+    </option>
+  </Event>
+</Events>
