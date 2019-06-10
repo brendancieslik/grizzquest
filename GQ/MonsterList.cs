@@ -9,11 +9,12 @@ using System.Xml.Linq;
 
 namespace SophProj
 {
-	class Monster
-	{
+    class Monster
+    {
         public string name { get; set; }
         public int hp { get; set; }
         public int dmg { get; set; }
+        public int threat { get; set; }
         public string description { get; set; }
         private static Ienumberable<Monster> MonsterList;
 
@@ -22,10 +23,11 @@ namespace SophProj
       
         }
 
-        public Monster(int health, int damage)
+        public Monster(int health, int damage, string descript)
         {
             hp = health;
             dmg = damage;
+            description = descript;
         }
 
         public static void CreateMonsterList()
@@ -40,12 +42,26 @@ namespace SophProj
             MonsterList = from mo in doc.Descendants("Monster")
                           select new Monster()
                           {
-                              name = (int)EventArgs.Attribute(""),
-                              dmg = from damage in ev.Descendants("statDamage"),
-                                    da
+                              name = (int)mo.Attribute("name"),
+                              dmg = (int)mo.Attribute("damage"),
+                              description = (string)mo.Attribute("description"),
+                              therat = (int)mo.Attribute("threat")
 
 
-                          }
+                          };
         }
-	}
+        public static Monster getRandomMonster(int difficulty)
+        {
+            do
+            {
+                System.Random r = new System.Random();
+                int count = Monsterlist.Count() - 1;
+                int monsterIndex = r.Next(0, count);
+                Monster m = MonsterList.ElementAt(monsterIndex);
+            }
+            while (m.getthreat() != difficulty);
+            return m;
+        }
+    }
+}
 
