@@ -12,8 +12,14 @@ namespace SophProj
     class Monster
     {
         public string name { get; set; }
-        public int hp { get; set; }
-        public int dmg { get; set; }
+        public int strength { get; set; }
+        public int dexterity { get; set; }
+        public int intelligence { get; set; }
+        public int vitality { get; set; }
+        public int maxHealth { get; set; }
+        public int currentHealth { get; set; }
+        public int ArmorRating { get; set; }
+        public int damage { get; set; }
         public int threat { get; set; }
         public string description { get; set; }
         private static Ienumberable<Monster> MonsterList;
@@ -23,11 +29,18 @@ namespace SophProj
       
         }
 
-        public Monster(int health, int damage, string descript)
+        public Monster(int str, int dex, int intelli, int vit, int hp, int ar, int thr, string des)
         {
-            hp = health;
-            dmg = damage;
-            description = descript;
+            strength = str;
+            dexerity = dex;
+            intelligence = intelli;
+            vitality = vit;
+            healthPoints = hp;
+            ArmorRating = ar;
+            threat = thr;
+            description = des;
+            maxHealth = vit * 10;
+            currentHealth = maxHealth;
         }
 
         public static void CreateMonsterList()

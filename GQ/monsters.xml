@@ -2,40 +2,46 @@
 <Monsters>
 
 	<Monster Name="Template. This will be the name of the monster"
-           health ="100"
-           damage ="100"
-           description ="This will describe the monster the player"
-           threat ="0">
-    </Monster>
-	<Monster Name="Giant Rat"
-           health ="5"
-           damage ="1"
-           description ="A huge greasy rat. Gross!"
-           threat ="1">
-	</Monster>
-	<Monster Name="Goblin"
-           health ="20"
-           damage ="10"
-           description = "A small goblin wiedling a dagger."
-           threat ="2">
-	</Monster>
-	<Monster Name="Bandit"
-           health ="30"
-           damage ="10"
-           description ="A scarred man brandishgin a short-sword"
-           threat ="3">
-	</Monster>
-	<Monster Name="Bear"
-           health ="50"
-           damage="12"
-           description="A fearsome grizzy bear."
-           threat ="4">
-	</Monster>
+           str ="0"
+           dex ="0"
+           intelli ="o"
+           vit = "0"
+           thr ="0"
+           des ="This will describe the monster the player"/>
+  <Monster Name="Giant Rat"
+           str ="5"
+           dex="5"
+           intelli="5"
+           vit ="5"
+           thr ="1"
+           des ="A huge greasy rat. Gross!"/>
+
+  <Monster Name="Goblin"
+           str ="6"
+           dex ="6"
+           intelli ="6"
+           vit ="6"
+           thr ="2"
+           description = "A small goblin wiedling a dagger."/>
+  <Monster Name="Bandit"
+           str ="7"
+           dex ="7"
+           intelli ="7"
+           vit ="7"
+           thr ="3"
+           des ="A scarred man brandishgin a short-sword"/>
+  <Monster Name="Bear"
+           str ="8"
+           dex ="8"
+           intelli ="8"
+           vit ="8"
+           thr ="4"
+           des="A fearsome grizzy bear."/>
   <Monster Name="Golem"
-		   health = "75"
-		   damage = "25"
-		   description = "A massive golem made of clay towers before you"
-		   threat = "5">
-  </Monster>
+           str ="9"
+           dex ="9"
+           intelli ="9"
+		       vit ="9"
+           thr ="5"/>
 </Monsters>
 		
