@@ -29,8 +29,9 @@ namespace SophProj
       
         }
 
-        public Monster(int str, int dex, int intelli, int vit, int hp, int ar, int thr, string des)
+        public Monster(string name,int str, int dex, int intelli, int vit, int thr, string des)
         {
+            name = name;
             strength = str;
             dexerity = dex;
             intelligence = intelli;
@@ -41,6 +42,9 @@ namespace SophProj
             description = des;
             maxHealth = vit * 10;
             currentHealth = maxHealth;
+            Armorating = dex * 2;
+            damage = str * 2;
+
         }
 
         public static void CreateMonsterList()
@@ -55,12 +59,12 @@ namespace SophProj
             MonsterList = from mo in doc.Descendants("Monster")
                           select new Monster()
                           {
-                              name = (int)mo.Attribute("name"),
-                              dmg = (int)mo.Attribute("damage"),
+                              name = (string)mo.Attribute("name"),
+                              strength = (int)mo.Attribute("str"),
+                              dexterity = (int)mo.Attribute("dex"),
+                              intelligence = (int)mo.Attribute("intelli"),
+                              threat = (int)mo.Attribute("threat"),
                               description = (string)mo.Attribute("description"),
-                              therat = (int)mo.Attribute("threat")
-
-
                           };
         }
         public static Monster getRandomMonster(int difficulty)
@@ -74,6 +78,10 @@ namespace SophProj
             }
             while (m.getthreat() != difficulty);
             return m;
+        }
+        private int attackModifier()
+        {
+
         }
     }
 }
