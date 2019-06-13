@@ -1,21 +1,27 @@
-﻿using System;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using UnityEngine;
 
-namespace SophProj
+public class MapEdge
 {
-    class MapEdge
-    {
-        public MapNode from { get; }
-        public MapNode to { get; }
+    public MapNode from { get; }
+    public MapNode to { get; }
 
-        public MapEdge(MapNode f, MapNode t)
-        {
-            from = f;
-            to = t;
-        }
+    public MapEdge(MapNode f, MapNode t)
+    {
+        from = f;
+        to = t;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
 
     }
 }

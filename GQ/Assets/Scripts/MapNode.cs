@@ -1,28 +1,44 @@
-﻿using System;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
-namespace SophProj
+public class MapNode : MonoBehaviour
 {
-    class MapNode
+
+    public Event mapEvent;
+    public int tier { get; set; }
+
+    void Start()
     {
-        Event mapEvent;
-        public int tier { get; }
 
-        public MapNode(int t)
-        {
-            mapEvent = Event.getRandomEvent();
-            tier = t;
-        }
+        Event.CreateEventList();
+        mapEvent = Event.getRandomEvent();
 
-        public static MapNode getInitialNode()
-        {
-           MapNode initial = new MapNode(0);
-            initial.mapEvent = null;
-            return initial;
-        }
+        Debug.Log(mapEvent.text);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
 
     }
+
+    public static MapNode getInitialNode()
+    {
+        MapNode initial = new MapNode();
+        initial.tier = 0;
+        initial.mapEvent = null;
+        return initial;
+    }
+
+    public void LoadGameEvent(MapNode n)
+    {
+        GameState.currentEvent = n.mapEvent;
+
+        Debug.Log(n.mapEvent.text);
+        //Debug.Log(GameState.currentEvent.text);
+        SceneManager.LoadScene(1);
+    }
+
 }
