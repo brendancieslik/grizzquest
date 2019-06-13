@@ -11,17 +11,23 @@ using System.Xml.Linq;
 
 public class Combat
 {
+    public int difficulty { get; set; }
     public int attackModifier { get; set; }
+    public int damageModifier { get; set; }
 
-    public int diceRoll()
+    public int attackRoll(int attack)
     {
+        attackModifier += attack;
         System.Random r = new System.Random();
-        int roll = r.Next(1, 10);
+        int roll = r.Next(1, 10) + attackModifier;
         return roll;
     }
-    public int Combat(character player, monster enemy)
+    public int damageRoll(int damage)
     {
-        if (diceRoll() + attackModifier >= enemy.getarmorRating()
+        damageModifier += damage;
+        System.Random r = new System.Random();
+        int roll = r.Next(1, 10) + attackModifier;
+        return roll;
     }
 
 

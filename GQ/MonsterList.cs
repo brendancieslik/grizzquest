@@ -29,9 +29,9 @@ namespace SophProj
       
         }
 
-        public Monster(string name,int str, int dex, int intelli, int vit, int thr, string des)
+        public Monster(string name1,int str, int dex, int intelli, int vit, int thr, string des)
         {
-            name = name;
+            name = name1;
             strength = str;
             dexerity = dex;
             intelligence = intelli;
