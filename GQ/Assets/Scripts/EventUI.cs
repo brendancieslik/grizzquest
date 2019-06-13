@@ -16,10 +16,9 @@ public class EventUI
     Event currentEvent { get; set; }
     private EventOutcome selectedOutcome;
 
-    public EventUI(Event e)
+    public EventUI()
     {
-
-        currentEvent = e;
+        currentEvent = GameState.currentEvent;
     }
 
     public void displayEvent()
