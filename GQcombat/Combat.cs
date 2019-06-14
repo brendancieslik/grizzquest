@@ -11,22 +11,45 @@ using System.Xml.Linq;
 
 public class Combat
 {
-    public int difficulty { get; set; }
-    public int attackModifier { get; set; }
-    public int damageModifier { get; set; }
+    public int attackRound(Character player, Monster enemy)
+    {
+        if ((diceRoll() + player.getattackModifer()) > enemy.getarmorClass())
+        {
+            enemy.setcurrentHealth(enemy.getcurrentHealth() - damageRoll(player));
+            if (enemy.getcurrentHealth <= 0)
+            {
+                //TODO make method to return to map screen
+            }
+            else
+            {
+                if (diceRoll() + enemy.getattackModifier() > player.getarmorClass())
+                {
+                    player.setcurrentHealth(player.getcurrentHealth() - damageRoll(enemy));
+                    if (player.getcurrentHealth() <= 0)
+                    {
+                        //TODO go to game over screen
+                    }
+                }
+            }
 
-    public int attackRoll(int attack)
-    {
-        attackModifier += attack;
-        System.Random r = new System.Random();
-        int roll = r.Next(1, 10) + attackModifier;
-        return roll;
+        }
+            
     }
-    public int damageRoll(int damage)
+    public int damageRoll(Character player)
     {
-        damageModifier += damage;
+        //TODO double damage if diceRoll() = 10
+        int damage = diceRoll() + player.getdamageModifier;
+        return damage;
+    }
+    public int damageRoll(Monster enemy)
+    {
+        int damage = diceRoll() + enemy.getdamageModifier;
+        return damage;
+    }
+    public int diceRoll()
+    {
         System.Random r = new System.Random();
-        int roll = r.Next(1, 10) + attackModifier;
+        int roll = r.Next(1, 10);
         return roll;
     }
 
