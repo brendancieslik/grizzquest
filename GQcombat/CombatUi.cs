@@ -11,9 +11,8 @@ public class CombatUI
     private static Text powerAttack = GameObject.Find("powerAttack").GetComponent<Text>();
     private static Text preciseAttack = GameObject.Find("preciseAttack").GetComponent<Text>();
     private static Text flee = GameObject.Find("flee").GetComponent<Text>();
-    Monster currentMonster { get; set; }
-    private Character player { get; set; }
-    private combatResults results;
+    public Monster currentMonster { get; set; }
+    public Character player { get; set; }
 
 
 	public CombatUI(Character playerNow,Monster enemy)
@@ -24,18 +23,36 @@ public class CombatUI
 
     public void SelectOption(int selection)
     {
-        if (selection =  0)
+        switch(selection)
         {
-            player.basicAttack();
-            CombatUI.attackRound(player, currentMonster);
-
+            case 0:
+                player.basicAttack();
+                Combat.AttackRound(player, currentMonster);
+                player.resetModifiers();
+                break;
+            case 1:
+                player.powerAttack();
+                Combat.attackRound(player, currentMonster);
+                player.resetModifiers();
+                break;
+            case 2:
+                player.preciseAttack();
+                Combat.AttackRound(player, currentMonster);
+                player.resetModifiers();
+                break;
+            case 3:
+                Combat.flee(player, currentMonster);
+                break;
         }
-    }
+    } 
 
     public void KeyPress(int selection)
-
     {
         SelectOption(selection);
+    }
+    public int NewPlayerHealth(int hp)
+    {
+        return player.getCurrentHealth;
     }
 
 

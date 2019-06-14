@@ -5,6 +5,8 @@ public class CombatPhase : MonoBehaviour
     CombatUI combatUI;
     [SerializeField] Text textComponent;
     State state;
+    private static Text playerHealth = GameObject.Find("playerHealth").GetComponent<Text>;
+    private static Text monsterHealth = GameObject.Find("monsterHealth").GetComponent<Text>;
 
     void Start()
     {
@@ -14,6 +16,7 @@ public class CombatPhase : MonoBehaviour
     void Update()
     {
         ManageState();
+
     }
     private void ManageState()
     {
@@ -37,5 +40,10 @@ public class CombatPhase : MonoBehaviour
     private void LoadInitialData()
     {
         Monster.CreateMonsterList();
+        Monster.getRandomMonster(1);
+    }
+    private void updateHealth()
+    {
+        playerHealth = 
     }
 }

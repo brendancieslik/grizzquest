@@ -18,7 +18,7 @@ namespace SophProj
         public int vitality { get; set; }
         public int maxHealth { get; set; }
         public int currentHealth { get; set; }
-        public int armorRating { get; set; }
+        public int armorClass { get; set; }
         public int attackModifier { get; set; }
         public int damageModifier { get; set; }
         public int threat { get; set; }
@@ -38,7 +38,7 @@ namespace SophProj
             intelligence = intelli;
             vitality = vit;
             maxHealth = vit * 5;
-            armorRating = dex;
+            armorClass = dex;
             threat = thr;
             description = des;
             maxHealth = vit * 10;

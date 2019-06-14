@@ -11,7 +11,7 @@ using System.Xml.Linq;
 
 public class Combat
 {
-    public int attackRound(Character player, Monster enemy)
+    public AttackRound(Character player, Monster enemy)
     {
         if ((diceRoll() + player.getattackModifer()) > enemy.getarmorClass())
         {
@@ -35,6 +35,17 @@ public class Combat
         }
             
     }
+    public int monsterAttack(Character player, Monster enemy)
+    {
+        if (diceRoll() + enemy.getattackModifier() > player.getarmorClass())
+        {
+            player.setcurrentHealth(player.getcurrentHealth() - damageRoll(enemy));
+            if (player.getcurrentHealth() <= 0)
+            {
+                //TODO go to game over screen
+            }
+        }
+    }
     public int damageRoll(Character player)
     {
         //TODO double damage if diceRoll() = 10
@@ -52,8 +63,17 @@ public class Combat
         int roll = r.Next(1, 10);
         return roll;
     }
+    public void flee(Character player, Monster enemy)
+    {
+        if (Combat.diceRoll() + player.getDexerity() >= Combat.diceRoll + enemy.getDexerity())
+        {
+            //TODO change state back to map screen
+        } else {
+        monsterAttack(player, enemy);                
+        }
 
-
+        
+    }
 
 
 }
