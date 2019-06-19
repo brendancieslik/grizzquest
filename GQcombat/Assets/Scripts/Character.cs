@@ -13,10 +13,10 @@ public class Character
     public int attackModifier { get; set; }
     public int damageModifier { get; set; }
 
-    public static Character(int str, int dex, int intelli, int vit)
+    public Character(int str, int dex, int intelli, int vit)
     {
         strength = str;
-        dexerity = dex;
+        dexterity = dex;
         intelligence = intelli;
         vitality = vit;
         maxHealth = vitality * 10;
@@ -26,21 +26,21 @@ public class Character
         currentHealth = maxHealth;
         resetModifiers();
     }
-    private void basicAttack()
+    public void basicAttack()
     { }
-    private void powerAttack()
+    public void powerAttack()
     {
         attackModifier -= 2;
         damageModifier += 2;
     }
-    private void preciseAttack()
+    public void preciseAttack()
     {
         attackModifier += 2;
         damageModifier -= 2;
     }
-    private void resetModifiers()
+    public void resetModifiers()
     {
-        attackModifier = dexerity;
+        attackModifier = dexterity;
         damageModifier = strength;
     }
 }
