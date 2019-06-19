@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Events>
-  
+
   <Event Text="Template.">
     <option text="This describes the first option available.">
       <outcome chance="25" text="This happens if you roll a 1-25. You will get +1 STR" >
@@ -23,26 +23,24 @@
       </outcome>
     </option>
   </Event>
-  
-  
   <Event text="You come across an old man laying motionlesss. What do you want to do?">
     <option text="Shake him awake.">
       <outcome chance="70" text="&quot;Heavens thank you! I must have nodded off again. Have some of my bread,&quot; the man replies." >
-          <reward type="hp" value ="2"></reward>
+        <reward type="hp" value ="2"></reward>
       </outcome>
       <outcome chance="30" text="As you put your hand on his shoulder, the necrotic flesh melts away. You dont feel so good." >
         <reward type="maxhp" value="-1"></reward>
       </outcome>
     </option>
     <option text="Ignore him.">
-      <outcome chance="100" text="You continue on your way."/>  
+      <outcome chance="100" text="You continue on your way."/>
     </option>
   </Event>
   <Event Text="A wild event appears.">
     <option text="Throw a pokeball.">
       <outcome chance="40" text="You throw the pokeball. The Event was caught!" >
         <reward type="item" />
-      </outcome>      
+      </outcome>
       <outcome chance="60" text="You throw the pokeball. But it failed." />
     </option>
     <option text="Battle it!">
@@ -53,8 +51,48 @@
   </Event>
   <Event Text="A goblin attacks">
     <option text="Fight.">
-      <outcome chance="100" text="Battle!" battlevalue="Goblin">        
+      <outcome chance="100" text="Battle!" battlevalue="Goblin">
       </outcome>
     </option>
   </Event>
+  <Event text="As you round a turn in the road, you see a toppled carriage stranded in a ditch. In a seemingly unconscious heap near the wreck, there is a poorly dressed man with a sword">
+    <option text="Search the carriage and leave the man to his fate.">
+      <outcome chance="20" text="You coldly step over the man as you walk towards the upturned carriage. You pry open the damaged door, revealing a well worn interior. After some inspection you find a hidden compartment containing a potion of strength." >
+        <reward type="strength" value ="1"></reward>
+      </outcome>
+      <outcome chance="80" text="You coldly step over the man as you walk towards the upturned carriage. You pry open the damaged door, revealing a well worn interior. After some inspection you find nothing of value." >
+      </outcome>
+    </option>
+    <option text="Try to help the man.">
+      <outcome chance="10" text="You crouch and reach out for the man. There is no response, the man has passed."/>
+      <outcome chance="90" text="You crouch and reach out for the man. &quot;...Wat-water....plea-please....&quot;. You give the man water and he quickly regains his vigor.&quot;Thank you for your help kind traveller. Here, take this potion of strength. It may not be much for an adventurer such as yourself but it's all I have."></outcome>
+      <reward type="strength" value="1"/>
+    </option>
+    <option text="Continue on your way."/>
+  </Event>
+  <Event Text="As you continue on your journey, you come across a dilapidated house on the wayside. The home is in a sorry state; a tree grows through the roof, the shutters are gone, and the dooor is hanging by a hinge.">
+    <option text="Search the home.">
+      <outcome chance="50" text="You slowly approach the home, preparing yourself for whatever awaits you within. You peek inside the front door and the room appears to be empty, except for clutter scattered about on the floor. As you make your way inside, you feel the floor begin to collapse beneath your feet and you fall into the basement. Earning a fews scratches and bruises, you pull yourself out of the collapsed house and continue on your way.">
+        <reward type="currentHealth" value="-5"/>
+      </outcome>
+      <outcome chance="25" text="You slowly approach the home, preparing yourself for whatever awaits you within. You peek inside the front door and the room appears to be empty, except for clutter scattered about on the floor. The floor groans in protest as you make your into a kitchen. The kitchen appears to be in a much better state than the foyer, and upon further inspection you find food stores that are still edible. You take this precious moment of peace to rest and eat.">
+        <reward type="currentHealth" value="20"/>
+      </outcome>
+      <outcome chance="25" text="You slowly approach the home, preparing yourself for whatever awaits you within. You peek inside the front door and the room appears to be empty, except for clutter scattered about on the floor. The floor groans in protest as you make your into a kitchen. The kitchen appears to be in a much better state than the foyer, but the foodstores within have long since rotted away."/>
+    </option>
+    <option text="Continue on your way."/>
+  </Event>
+  <Event text="You hear a commotion on the road head. As you move closer to investigate, you see a large man shove a woman to the ground. The man yells viciously at the woman &quot;Give me the rest, I know you have more">
+    <option text="Help the woman.">
+      <outcome chance ="80" text="You run to push the man aside and help the woman. As you approach, the man jumps in fright and runs back the way you came.&quot;Thank you for helping me! I can't thank you enough, here take this potion. I have no use for it anyway&quot;">
+        <reward type="item"/>
+      </outcome>
+      <outcome chance ="20" text="You run to push the man aside and help the woman. As you approach, the man jumps in fright and runs back the way you came.&quot;Thank you for helping me! I can't thank you enough, but sadly that bandit stole all of my goods. I'm sorry I can't repay you in anyway&quot;"/>
+    </option>
+    <option text="Attempt to help the man rob the woman. CONTINUE FROM HERE">
+
+    </option>
+    <option text="Continue on your way"/>
+  </Event>
 </Events>
+ 
