@@ -26,19 +26,19 @@ public class CombatUI
         switch (selection)
         {
             case 0:
-                player.basicAttack();
-                Combat.attackRound(player, currentMonster);
-                player.resetModifiers();
+                player.BasicAttack();
+                Combat.AttackRound(player, currentMonster);
+                player.ResetModifiers();
                 break;
             case 1:
-                player.powerAttack();
-                Combat.attackRound(player, currentMonster);
-                player.resetModifiers();
+                player.PowerAttack();
+                Combat.AttackRound(player, currentMonster);
+                player.ResetModifiers();
                 break;
             case 2:
-                player.preciseAttack();
+                player.PreciseAttack();
                 Combat.AttackRound(player, currentMonster);
-                player.resetModifiers();
+                player.ResetModifiers();
                 break;
             case 3:
                 Combat.flee(player, currentMonster);
@@ -52,7 +52,7 @@ public class CombatUI
     }
     public int NewPlayerHealth(int hp)
     {
-        return player.getCurrentHealth;
+        return player.getcurrentHealth;
     }
 
 

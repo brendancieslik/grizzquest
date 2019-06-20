@@ -10,14 +10,15 @@ public class CombatPhase : MonoBehaviour
     CombatUI combatUI;
     [SerializeField] Text textComponent;
     State state;
-    private static Text playerHealth = GameObject.Find("playerHealth").GetComponent<Text>;
-    private static Text monsterHealth = GameObject.Find("monsterHealth").GetComponent<Text>;
+    private static Text playerHealth = GameObject.Find("playerHealth").GetComponent<Text>();
+    private static Text monsterHealth = GameObject.Find("monsterHealth").GetComponent<Text>();
     Character character1 = new Character(10, 10, 10, 10);
+    Monster monster1 = new Monster("Bill", 5, 5, 5, 5, 1, "This is the test description");
 
     void Start()
     {
         LoadInitialData();
-        combatUI = new CombatUI(character1,Monster.getRandomMonster(1));
+        combatUI = new CombatUI(character1,monster1);
     }
     void Update()
     {

@@ -12,7 +12,7 @@ public class Combat
 {
     public void AttackRound(Character player, Monster enemy)
     {
-        if ((diceRoll() + player.getattackModifer()) > enemy.getarmorClass())
+        if ((diceRoll() + player.getAttackModifier()) > enemy.getarmorClass())
         {
             enemy.setcurrentHealth(enemy.getcurrentHealth() - damageRoll(player));
             if (enemy.getcurrentHealth <= 0)
@@ -56,7 +56,7 @@ public class Combat
         int damage = diceRoll() + enemy.getdamageModifier;
         return damage;
     }
-    public int diceRoll()
+    public static int diceRoll()
     {
         System.Random r = new System.Random();
         int roll = r.Next(1, 10);
@@ -64,7 +64,7 @@ public class Combat
     }
     public void flee(Character player, Monster enemy)
     {
-        if (Combat.diceRoll() + player.getDexerity() >= Combat.diceRoll + enemy.getDexerity())
+        if (Combat.diceRoll() + player.getDexterity() >= Combat.diceRoll + enemy.getDexterity())
         {
             //TODO change state back to map screen
         } else {

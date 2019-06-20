@@ -1,47 +1,45 @@
-﻿using System;
-
-public class Character
+﻿public class Character
 {
 
-    public int strength { get; set; }
-    public int dexterity { get; set; }
-    public int intelligence { get; set; }
-    public int vitality { get; set; }
-    public int maxHealth { get; set; }
-    public int currentHealth { get; set; }
-    public int armorClass { get; set; }
-    public int attackModifier { get; set; }
-    public int damageModifier { get; set; }
+    private int Strength { get; set; }
+    private int Dexterity { get; set; }
+    private int Intelligence { get; set; }
+    private int Vitality { get; set; }
+    private int MaxHealth { get; set; }
+    private int CurrentHealth { get; set; }
+    private int ArmorClass { get; set; }
+    private int AttackModifier { get; set; }
+    private int DamageModifier { get; set; }
 
     public Character(int str, int dex, int intelli, int vit)
     {
-        strength = str;
-        dexterity = dex;
-        intelligence = intelli;
-        vitality = vit;
-        maxHealth = vitality * 10;
-        currentHealth = maxHealth;
-        armorClass = dex;
-        maxHealth = vitality * 10;
-        currentHealth = maxHealth;
-        resetModifiers();
+        Strength = str;
+        Dexterity = dex;
+        Intelligence = intelli;
+        Vitality = vit;
+        MaxHealth = Vitality * 10;
+        CurrentHealth = MaxHealth;
+        ArmorClass = dex;
+        MaxHealth = Vitality * 10;
+        CurrentHealth = MaxHealth;
+        ResetModifiers();
     }
-    public void basicAttack()
+    public void BasicAttack()
     { }
-    public void powerAttack()
+    public void PowerAttack()
     {
-        attackModifier -= 2;
-        damageModifier += 2;
+        AttackModifier -= 2;
+        DamageModifier += 2;
     }
-    public void preciseAttack()
+    public void PreciseAttack()
     {
-        attackModifier += 2;
-        damageModifier -= 2;
+        AttackModifier += 2;
+        DamageModifier -= 2;
     }
-    public void resetModifiers()
+    public void ResetModifiers()
     {
-        attackModifier = dexterity;
-        damageModifier = strength;
+        AttackModifier = Dexterity;
+        DamageModifier = Strength;
     }
 }
 

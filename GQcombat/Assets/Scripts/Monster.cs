@@ -22,7 +22,7 @@ using System.Xml.Linq;
         public int damageModifier { get; set; }
         public int threat { get; set; }
         public string description { get; set; }
-        public static IEnumerable<Monster> MonsterList;
+        private static IEnumerable<Monster> MonsterList;
 
         public Monster()
         {
@@ -65,7 +65,7 @@ using System.Xml.Linq;
                               description = (string)mo.Attribute("description"),
                           };
         }
-        public static Monster getRandomMonster(int difficulty)
+        public Monster getRandomMonster(int difficulty)
         {
            
                 System.Random r = new System.Random();
