@@ -40,65 +40,29 @@ public class MapCreator : MonoBehaviour
     }
     public void CreateTier(int offset)
     {
-        List<MapNode> thisTier = GetTier(GameState.currentTier + offset);        
-        GameObject canvas = GameObject.FindGameObjectWithTag("Canvas");
-        GameObject newLocation0;
-        GameObject newLocation1;
-        GameObject newLocation2;
-        GameObject newLocation3;
-
-
-        //This is a huge mess. Must refactor
+        List<MapNode> thisTier = GetTier(GameState.currentTier + offset);     
+        
         switch (thisTier.Count)
         {
-
             case 1:
-                newLocation0 = Instantiate(Location, new Vector3(150 + offset * 182, 500, 0), Quaternion.identity);
-                newLocation0.transform.SetParent(canvas.transform);
-                newLocation0.GetComponent<Location>().locationNode = thisTier[0];
-                colorCurrentNode(newLocation0);
+                instantiateNode(offset, 500, thisTier[0]);
                 break;
             case 2:
-                newLocation0 = Instantiate(Location, new Vector3(150 + offset * 182, 300, 0), Quaternion.identity);
-                newLocation0.transform.SetParent(canvas.transform);
-                newLocation0.GetComponent<Location>().locationNode = thisTier[0];
-                colorCurrentNode(newLocation0);
-                newLocation1 = Instantiate(Location, new Vector3(150 + offset * 182, 700, 0), Quaternion.identity);
-                newLocation1.transform.SetParent(canvas.transform);
-                newLocation1.GetComponent<Location>().locationNode = thisTier[1];
-                colorCurrentNode(newLocation1);
+                instantiateNode(offset, 300, thisTier[0]);
+                instantiateNode(offset, 700, thisTier[1]);
                 break;
             case 3:
-                newLocation0 = Instantiate(Location, new Vector3(150 + offset * 182, 300, 0), Quaternion.identity);
-                newLocation0.transform.SetParent(canvas.transform);
-                newLocation0.GetComponent<Location>().locationNode = thisTier[0];
-                colorCurrentNode(newLocation0);
-                newLocation1 = Instantiate(Location, new Vector3(150 + offset * 182, 500, 0), Quaternion.identity);
-                newLocation1.transform.SetParent(canvas.transform);
-                newLocation1.GetComponent<Location>().locationNode = thisTier[1];
-                colorCurrentNode(newLocation1);
-                newLocation2 = Instantiate(Location, new Vector3(150 + offset * 182, 700, 0), Quaternion.identity);
-                newLocation2.transform.SetParent(canvas.transform);
-                newLocation2.GetComponent<Location>().locationNode = thisTier[2];
-                colorCurrentNode(newLocation2);
+
+                instantiateNode(offset, 300, thisTier[0]);
+                instantiateNode(offset, 500, thisTier[1]);
+                instantiateNode(offset, 700, thisTier[2]);
                 break;
             case 4:
-                newLocation0 = Instantiate(Location, new Vector3(150 + offset * 182, 200, 0), Quaternion.identity);
-                newLocation0.transform.SetParent(canvas.transform);
-                newLocation0.GetComponent<Location>().locationNode = thisTier[0];
-                colorCurrentNode(newLocation0);
-                newLocation1 = Instantiate(Location, new Vector3(150 + offset * 182, 400, 0), Quaternion.identity);
-                newLocation1.transform.SetParent(canvas.transform);
-                newLocation1.GetComponent<Location>().locationNode = thisTier[1];
-                colorCurrentNode(newLocation1);
-                newLocation2 = Instantiate(Location, new Vector3(150 + offset * 182, 600, 0), Quaternion.identity);
-                newLocation2.transform.SetParent(canvas.transform);
-                newLocation2.GetComponent<Location>().locationNode = thisTier[2];
-                colorCurrentNode(newLocation2);
-                newLocation3 = Instantiate(Location, new Vector3(150 + offset * 182, 800, 0), Quaternion.identity);
-                newLocation3.transform.SetParent(canvas.transform);
-                newLocation3.GetComponent<Location>().locationNode = thisTier[3];
-                colorCurrentNode(newLocation3);
+
+                instantiateNode(offset, 200, thisTier[0]);
+                instantiateNode(offset, 400, thisTier[1]);
+                instantiateNode(offset, 600, thisTier[2]);
+                instantiateNode(offset, 800, thisTier[3]);
                 break;
         }
         
@@ -134,5 +98,15 @@ public class MapCreator : MonoBehaviour
         {
             Loc.GetComponent<Image>().color = Color.cyan;
         }
+    }
+
+    private void instantiateNode(int offset, int ypos, MapNode node)
+    {
+        GameObject canvas = GameObject.FindGameObjectWithTag("Canvas");
+        GameObject newLocation;
+        newLocation = Instantiate(Location, new Vector3(150 + offset * 182, ypos, 0), Quaternion.identity);
+        newLocation.transform.SetParent(canvas.transform);
+        newLocation.GetComponent<Location>().locationNode = node;
+        colorCurrentNode(newLocation);
     }
 }
