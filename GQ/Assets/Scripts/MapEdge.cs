@@ -12,16 +12,12 @@ public class MapEdge
         from = f;
         to = t;
     }
-
-    // Start is called before the first frame update
-    void Start()
+    public bool isSame(MapEdge e)
     {
-
+        if (e.from != this.from || e.to != this.to)
+            return false;
+        return true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
 }

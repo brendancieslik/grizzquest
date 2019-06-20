@@ -78,7 +78,9 @@ public class EventUI
     public void SelectOption(int selection)
     {
         currentEvent.hasChosen = true;
+
         selectedOutcome = currentEvent.options.ElementAt(selection).getRandomOutcome();
+
     }
 
     public void KeyPress(int selection)

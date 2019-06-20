@@ -78,4 +78,12 @@ public class Event
         Event e = Eventlist.ElementAt(eventIndex);
         return e;
     }
+    public static Event getRandomEvent(System.Random r)
+    {
+        int count = Eventlist.Count() - 1;
+      
+        int eventIndex = r.Next(0, count);
+        Event e = Eventlist.ElementAt(eventIndex);
+        return e;
+    }
 }

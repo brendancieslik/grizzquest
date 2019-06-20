@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 /******************************************************************
  Map Nodes are the spaces on the Map.
@@ -14,16 +15,19 @@ using System.Threading.Tasks;
  *****************************************************************/
 public static class Map
 {
-    public static List<MapEdge> edges = new List<MapEdge>();
-    public static List<MapNode> nodes = new List<MapNode>(); 
+    public static List<MapEdge> edges { get; set; }
+    public static List<MapNode> nodes { get; set; } 
     public const int MAP_SIZE = 40;
 
     
     public static void CreateMap()
     {
+        nodes = new List<MapNode>();
+        edges = new List<MapEdge>();
+        Event.CreateEventList();
         List<MapNode> prevTier = new List<MapNode>();
         List<MapNode> currTier = new List<MapNode>();
-        System.Random rand = new Random();
+        System.Random rand = new System.Random();
 
         //Sets up initial tier. This is the node you start at. It will have a null event.
         MapNode initialNode = MapNode.getInitialNode();
@@ -36,19 +40,18 @@ public static class Map
             CreateTierEdges(prevTier, currTier);
             prevTier = currTier;
         }
-
-
     }
     private static List<MapNode> CreateTier(int tier, System.Random r)
-    {
+    {        
         int nodeCount = r.Next(1, 5);
         List<MapNode> currTier = new List<MapNode>();
         for (int i = 0; i < nodeCount; i++)
         {
-            MapNode n = new MapNode();
+            MapNode n = new MapNode();            
             n.tier = tier;
+            n.mapEvent = Event.getRandomEvent(r);
             currTier.Add(n);
-            nodes.Add(n);
+            nodes.Add(n);            
         }
         return currTier;
     }
@@ -115,9 +118,27 @@ public static class Map
             edges.Add(new MapEdge(prev.ElementAt(2), curr.ElementAt(1)));
             edges.Add(new MapEdge(prev.ElementAt(3), curr.ElementAt(1)));
         }
+    }
 
-
-
+    public static bool EdgeExists(MapNode prev, MapNode curr)
+    {
+        MapEdge testEdge = new MapEdge(prev, curr);        
+        foreach (MapEdge me in edges)
+        {
+            //Since these are added in tier order, you only need to check up until you reach the current tier
+            //me.from is the MapEdge's first node
+            if (me.from.tier > GameState.currentTier)
+            {
+                return false;
+            }
+            if (me.isSame(testEdge))
+            {                
+                return true;
+            }
+        }
+        //If we are on the last node, and somehow an edge doesnt exist...
+        //should be unreachable
+        return false;
     }
 }
 

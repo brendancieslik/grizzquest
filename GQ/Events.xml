@@ -38,6 +38,7 @@
       <outcome chance="100" text="You continue on your way."/>  
     </option>
   </Event>
+  
   <Event text="A wild event appears.">
     <option text="Throw a pokeball.">
       <outcome chance="40" text="You throw the pokeball. The Event was caught!" >
@@ -51,9 +52,17 @@
       </outcome>
     </option>
   </Event>
+  
   <Event text="A goblin attacks">
     <option text="Fight.">
       <outcome chance="100" text="Battle!" battlevalue="Goblin">        
+      </outcome>
+    </option>
+  </Event>
+
+  <Event text="You see two bandits running towards a merchant cart!">
+    <option text="You attack them before they reach the merchant.">
+      <outcome chance="100" text="You managed to take them down before they got there. The merchant thanks you, and you then continue on your way.">
       </outcome>
     </option>
   </Event>
