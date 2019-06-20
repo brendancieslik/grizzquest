@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835215c0390b9644e859579fdb2ab551, type: 3}
+  m_Name: Scene 2
+  m_EditorClassIdentifier: 
+  storyText: 'This is Room 2
+
+
+
+    1. Back to room 1
+
+    2. Back to starting state'
+  nextStates:
+  - {fileID: 11400000, guid: 1518c2e4ccd5d3c4fa07d4fdf645eb69, type: 2}
+  - {fileID: 11400000, guid: 372adaa040a6cd74da363b9449b7768c, type: 2}

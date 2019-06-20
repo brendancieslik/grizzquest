@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Events>
+  
+  <Event text="You come across an old man laying motionlesss. What do you want to do?">
+    <option text="Shake him awake.">
+      <outcome chance="70" text="&quot;Heavens thank you! I must have nodded off again. Have some of my bread,&quot; the man replies." >
+          <reward type="hp" value ="2"></reward>
+      </outcome>
+      <outcome chance="30" text="As you put your hand on his shoulder, the necrotic flesh melts away. You dont feel so good." >
+        <reward type="maxhp" value="-1"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore him.">
+      <outcome chance="100" text="You continue on your way."/>  
+    </option>
+  </Event>
+  
+  <Event text="As you are walking you see a small group of goblin kids bury something and then run away.">
+    <option text="Investigate">
+      <outcome chance="40" text="You unearth what they buried, and it turns out to be a gem!" >
+        <reward type="item" />
+      </outcome>      
+      <outcome chance="60" text="Seems nothing was there." />
+    </option>
+    <option text="You ignore them!">
+      <outcome chance="100" text="The event attacks." battlevalue="Charmander">
+        <reward type="item" value="Gym Badge" />
+      </outcome>
+    </option>
+  </Event>
+  <Event text="A goblin attacks">
+    <option text="Attack!">
+      <outcome chance="100" text="You managed to defeat the goblin!" battlevalue="Goblin">        
+      </outcome>
+    </option>
+    <option text="Run away!">
+      <outcome chance="100" text="You sucessfully managed to run away."/>
+    </option>
+  </Event>
+  
+  <Event text="You see two bandits running towards a merchant cart!">
+    <option text="You attack them before they reach the merchant.">
+      <outcome chance="100" text="You managed to take them down before they got there. The merchant thanks you, and you then continue on your way.">
+      </outcome>
+    </option>
+    <option text="You inform the nearby guards!!">
+      <outcome chance="100" text="The guards rush over to help the merchant and sucessfully stop the bandits!"/>
+    </option>  
+  </Event>
+  
+  <Event text="You see two villagers alongside a broken down cart.">
+    <option text="You offer to lift up the cart so they put the wheel back on.">
+      <outcome chance="70" text="The cart was fixed, the villagers give you a piece of chest armor!">
+      </outcome>
+      <outcome chance="30" text="You couldn't lift the cart, you apologize and continue towards your destination." />
+    </option>
+  </Event>
+
+  <Event text="A bandit runs up to you and tells you to give him all your possessions!">
+    <option text="You attack him.">
+      <outcome chance="100" text="You defeat the bandit.">
+      </outcome>
+    </option>
+    <option text="You intimidate him into leaving.">
+      <outcome chance="100" text="The bandit runs away!"/>
+    </option>
+  </Event>
+
+  <Event text="You come across a cave. What do you want to do?">
+    <option text="Explore it.">
+      <outcome chance="70" text="As you explore the cave you find and eat a mushroom that gives you strength." >
+        <reward type="str" value ="2"></reward>
+      </outcome>
+      <outcome chance="30" text="As you explore the cave you fall and hurt yourself." >
+        <reward type="hp" value="-1"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore it.">
+      <outcome chance="100" text="You continue on your way."/>
+    </option>
+  </Event>
+
+
+  <Event text="You come across a burned house. What do you want to do?">
+    <option text="Search it.">
+      <outcome chance="70" text="You find some loot that will help you on you advernture." >
+        <reward type="str" value ="2"></reward>
+      </outcome>
+      <outcome chance="30" text="As you serch the burned house a wooden beam falls on you." >
+        <reward type="hp" value="-1"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore it.">
+      <outcome chance="100" text="You continue on your way."/>
+    </option>
+  </Event>
+
+
+  <Event text="You come across an abandoned carriage. What do you want to do?">
+    <option text="Search it.">
+      <outcome chance="70" text="As you search abandoned carriage you find a book that you read." >
+        <reward type="intelli" value ="2"></reward>
+      </outcome>
+      <outcome chance="30" text="As you search that abandoned carriage a bandit tries to fight you." >
+        <reward type="hp" value="-1"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore it.">
+      <outcome chance="100" text="You continue on your way."/>
+    </option>
+  </Event>
+
+  <Event text="You come across a man that has been hurt on the side of the road.">
+    <option text="Ask him what's wrong.">
+      <outcome chance="70" text="The man has been robbed by bandits and you help him to safety" >
+        <reward type="intelli" value ="2"></reward>
+      </outcome>
+      <outcome chance="30" text="It was a trap and bandits try to rob you." >
+        <reward type="hp" value="-1"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore him.">
+      <outcome chance="100" text="You continue on your way."/>
+    </option>
+  </Event>
+
+  <Event text="You come across a farmers house. What do you want to do?">
+    <option text="Search it.">
+      <outcome chance="70" text="As you search the farmers house you find a potion that gives you vitality." >
+        <reward type="vit" value ="2"></reward>
+      </outcome>
+      <outcome chance="30" text="As you search the farmers house the owner comes back and tries to fight you." >
+        <reward type="hp" value="-1"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore it.">
+      <outcome chance="100" text="You continue on your way."/>
+    </option>
+  </Event>
+
+  <Event text="You come across an alchemist. What do you want to do?">
+    <option text="Ask for a potion.">
+      <outcome chance="70" text="The alchemist gives you a potion that gives you strength and vitality." >
+        <reward type="vit" value ="2"></reward>
+        <reward type="str" value ="2"></reward>
+      </outcome>
+      <outcome chance="30" text="The alchemist gives a potion that is poisonous." >
+        <reward type="hp" value="-2"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore it.">
+      <outcome chance="100" text="You continue on your way."/>
+    </option>
+  </Event>
+
+  <Event text="You come across a bandit camp. What do you want to do?">
+    <option text="Fight them.">
+      <outcome chance="70" text="You win the fight!" >
+        <reward type="vit" value ="2"></reward>
+        <reward type="str" value ="2"></reward>
+        <reward type="dex" value ="2"></reward>
+      </outcome>
+      <outcome chance="30" text="You lose the fight but managed to run away." >
+        <reward type="hp" value="-3"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore them.">
+      <outcome chance="100" text="You continue on your way."/>
+    </option>
+  </Event>
+
+  <Event text="You come across a pack of wolves. What do you want to do?">
+    <option text="Fight them.">
+      <outcome chance="70" text="You win the fight!" >
+        <reward type="vit" value ="2"></reward>
+        <reward type="str" value ="2"></reward>
+        <reward type="dex" value ="2"></reward>
+      </outcome>
+      <outcome chance="30" text="You lose the fight but managed to run away." >
+        <reward type="hp" value="-3"></reward>
+      </outcome>
+    </option>
+    <option text="Try to give them food.">
+      <outcome chance="70" text="They take the food and run away." >
+        <reward type="intelli" value="1"></reward>
+      </outcome>
+      <outcome chance="30" text="They take the food but still atack you." >
+        <reward type="hp" value="-3"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore them.">
+      <outcome chance="100" text="You continue on your way."/>
+    </option>
+  </Event>
+
+  <Event text="A local town has come under attack by bandits. What do you want to do?">
+    <option text="Help the locals fight the bandits.">
+      <outcome chance="70" text="You win the fight!" >
+        <reward type="vit" value ="2"></reward>
+        <reward type="str" value ="2"></reward>
+        <reward type="dex" value ="2"></reward>
+      </outcome>
+      <outcome chance="30" text="You lose the fight but managed to run away." >
+        <reward type="hp" value="-3"></reward>
+      </outcome>
+    </option>
+    <option text="Try to give bandits money and food so they can leave peacefully.">
+      <outcome chance="70" text="They take the money and food and run away." >
+        <reward type="intelli" value="1"></reward>
+      </outcome>
+      <outcome chance="30" text="They exploit you and still attack the locals." >
+        <reward type="hp" value="-3"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore it.">
+      <outcome chance="100" text="You continue on your way."/>
+    </option>
+  </Event>
+
+  <Event text="As you come into a town a local tells you about a mysterious object that you can find in the woods. What do you want to do?">
+    <option text="Look for the mysterious object.">
+      <outcome chance="70" text="You find the mysterious object and it gives you strength and dexterity" >
+        <reward type="dex" value ="2"></reward>
+        <reward type="str" value ="2"></reward>
+      </outcome>
+      <outcome chance="30" text="You can not find the mysterious object and you get lost in the woods for a few days." >
+        <reward type="hp" value="-2"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore him.">
+      <outcome chance="100" text="You continue on your way."/>
+    </option>
+  </Event>
+
+  <Event text="You come across a travelling merchent. What do you want to do?">
+    <option text="Ask to buy some goods.">
+      <outcome chance="70" text="The merchent sells you a potion that gives you health." >
+        <reward type="hp" value ="2"></reward>
+      </outcome>
+      <outcome chance="30" text="The merchent sells you a potion that is poisonous." >
+        <reward type="hp" value="-2"></reward>
+      </outcome>
+    </option>
+    <option text="Try to rob the merchent.">
+      <outcome chance="70" text="The merchent did not have much but you manged to get a healing potion." >
+        <reward type="hp" value ="2"></reward>
+        <reward type="str" value ="2"></reward>
+      </outcome>
+      <outcome chance="30" text="You failed and the merchant ran away." >
+        <reward type="hp" value="-2"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore it.">
+      <outcome chance="100" text="You continue on your way."/>
+    </option>
+  </Event>
+
+
+  <Event text="You come across a bandit camp. What do you want to do?">
+    <option text="Fight them.">
+      <outcome chance="70" text="You win the fight and you gained some experience." >
+        <reward type="vit" value ="2"></reward>
+        <reward type="str" value ="2"></reward>
+        <reward type="dex" value ="2"></reward>
+      </outcome>
+      <outcome chance="30" text="You lose the fight but managed to run away." >
+        <reward type="hp" value="-3"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore them.">
+      <outcome chance="100" text="You continue on your way."/>
+    </option>
+  </Event>
+
+  <Event text="You come across a pack of wolves. What do you want to do?">
+    <option text="Fight them.">
+      <outcome chance="70" text="You win the fight and you gained some experience." >
+        <reward type="vit" value ="2"></reward>
+        <reward type="str" value ="2"></reward>
+        <reward type="dex" value ="2"></reward>
+      </outcome>
+      <outcome chance="30" text="You lose the fight but managed to run away." >
+        <reward type="hp" value="-3"></reward>
+      </outcome>
+    </option>
+    <option text="Try to give them food.">
+      <outcome chance="70" text="They take the food and run away." >
+        <reward type="intelli" value="1"></reward>
+      </outcome>
+      <outcome chance="30" text="They take the food but still atack you." >
+        <reward type="hp" value="-3"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore them.">
+      <outcome chance="100" text="You continue on your way."/>
+    </option>
+  </Event>
+
+  <Event text="A local town has come under attack by bandits. What do you want to do?">
+    <option text="Help the locals fight the bandits.">
+      <outcome chance="70" text="You win the fight and you gained some experience." >
+        <reward type="vit" value ="2"></reward>
+        <reward type="str" value ="2"></reward>
+        <reward type="dex" value ="2"></reward>
+      </outcome>
+      <outcome chance="30" text="You lose the fight but managed to run away." >
+        <reward type="hp" value="-3"></reward>
+      </outcome>
+    </option>
+    <option text="Try to give bandits money and food so they can leave peacefully.">
+      <outcome chance="70" text="They take the money and food and run away." >
+        <reward type="intelli" value="1"></reward>
+      </outcome>
+      <outcome chance="30" text="They exploit you and still attack the locals." >
+        <reward type="hp" value="-3"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore it.">
+      <outcome chance="100" text="You continue on your way."/>
+    </option>
+  </Event>
+
+  <Event text="As you come into a town a local tells you about a mysterious object that you can find in the woods. What do you want to do?">
+    <option text="Look for the mysterious object.">
+      <outcome chance="70" text="You find the mysterious object and it gives you strength and dexterity" >
+        <reward type="dex" value ="2"></reward>
+        <reward type="str" value ="2"></reward>
+      </outcome>
+      <outcome chance="30" text="You can not find the mysterious object and you get lost in the woods for a few days." >
+        <reward type="hp" value="-2"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore him.">
+      <outcome chance="100" text="You continue on your way."/>
+    </option>
+  </Event>
+
+  <Event text="You come across a travelling merchent. What do you want to do?">
+    <option text="Ask to buy some goods.">
+      <outcome chance="70" text="The merchent sells you a potion that gives you health." >
+        <reward type="hp" value ="2"></reward>
+      </outcome>
+      <outcome chance="30" text="The merchent sells you a potion that is poisonous." >
+        <reward type="hp" value="-2"></reward>
+      </outcome>
+    </option>
+    <option text="Try to rob the merchent.">
+      <outcome chance="70" text="The merchent did not have much but you manged to get a healing potion." >
+        <reward type="hp" value ="2"></reward>
+        <reward type="str" value ="2"></reward>
+      </outcome>
+      <outcome chance="30" text="You failed and the merchant ran away." >
+        <reward type="hp" value="-2"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore it.">
+      <outcome chance="100" text="You continue on your way."/>
+    </option>
+  </Event>
+
+  <Event text="You come across a ruin. What do you want to do?">
+    <option text="Explore it.">
+      <outcome chance="70" text="As you explore the ruin you find a mysterious object that gives you intelligence." >
+        <reward type="intelli" value ="1"></reward>
+      </outcome>
+      <outcome chance="30" text="As you explore the ruin a group of bandits attack you." >
+        <reward type="hp" value="-1"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore it.">
+      <outcome chance="100" text="You continue on your way."/>
+    </option>
+  </Event>
+
+
+  <Event text="You come across a strange animal with its leg is stuck in a hunters trap.What do you want to do?">
+    <option text="Set the strange animal free.">
+      <outcome chance="70" text= "The hunter catches you and attacks you." >
+        <reward type="hp" value ="-1"></reward>
+      </outcome>
+      <outcome chance="30" text="The animal runs away." >
+        <reward type="hp" value="1"></reward>
+      </outcome>
+    </option>
+    <option text="kill the animal.">
+      <outcome chance="70" text= "You eat the animal and it has healing powers." >
+        <reward type="hp" value ="1"></reward>
+      </outcome>
+      <outcome chance="30" text="You eat the animal and it makes you sick." >
+        <reward type="hp" value="-1"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore it.">
+      <outcome chance="100" text="You continue on your way."/>
+    </option>
+  </Event>
+
+  <Event text="As you come into a town a man is running from a mob and screaming for help. What do you want to do?">
+    <option text="Help the man.">
+      <outcome chance="100" text="The man is an alchemist and gives you a potion." >
+        <reward type="intelli" value ="1"></reward>
+        <reward type="vit" value ="1"></reward>
+        <reward type="str" value ="1"></reward>
+        <reward type="dex" value ="1"></reward>
+      </outcome>
+    </option>
+    <option text="Help the mob.">
+      <outcome chance="100" text="You gained vitality by running after him." >
+        <reward type="vit" value ="1"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore them.">
+      <outcome chance="100" text="You continue on your way."/>
+    </option>
+  </Event>
+
+  <Event text="You come across an old man walking by himself. What do you want to do?">
+    <option text="Rob him.">
+      <outcome chance="100" text="You rob the old man but he has nothing valuable." >
+        <reward type="intelli" value ="-1"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore him.">
+      <outcome chance="100" text="You continue on your way."/>
+    </option>
+  </Event>
+
+  <Event text="You come across a bear in the woods. What do you want to do?">
+    <option text="Fight the bear.">
+      <outcome chance="70" text="You win the fight and you gained some experience." >
+        <reward type="vit" value ="2"></reward>
+        <reward type="str" value ="2"></reward>
+        <reward type="dex" value ="2"></reward>
+      </outcome>
+      <outcome chance="30" text="You lose the fight but managed to run away." >
+        <reward type="hp" value="-3"></reward>
+      </outcome>
+    </option>
+    <option text="Try to give the bear food.">
+      <outcome chance="100" text="The bear takes to food and you run away." >
+      </outcome>
+    </option>
+    <option text="Ignore it.">
+      <outcome chance="100" text="You continue on your way."/>
+    </option>
+  </Event>
+
+  <Event text="You come across an old man walking by himself. What do you want to do?">
+    <option text="Rob him.">
+      <outcome chance="100" text="You rob the old man but he has nothing valuable." >
+        <reward type="intelli" value ="-1"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore him.">
+      <outcome chance="100" text="You continue on your way."/>
+    </option>
+  </Event>
+
+  <Event text="You come across a river. What do you want to do?">
+    <option text="Try to find a way around.">
+      <outcome chance="100" text="You found a bridge that was close by." >
+        <reward type="intelli" value ="1"></reward>
+      </outcome>
+    </option>
+    <option text="Try to swim across.">
+      <outcome chance="70" text="You swam across." >
+        <reward type="intelli" value ="1"></reward>
+      </outcome>
+      <outcome chance="100" text="You had a hard time trying to swim across." >
+        <reward type="hp" value ="-1"></reward>
+      </outcome>
+    </option>
+  </Event>
+
+  <Event text="A storm has formed. What do you want to do?">
+    <option text="Look for an inn to sleep for the night">
+      <outcome chance="70" text="You find a inn to sleep in and you rest till the storm passes." >
+        <reward type="hp" value ="1"></reward>
+      </outcome>
+      <outcome chance="30" text="You could not find an inn and you were stuck out in the storm." >
+        <reward type="hp" value="-1"></reward>
+      </outcome>
+    </option>
+    <option text="Ignore the storm.">
+      <outcome chance="100" text="You continue on your way but the storm made you ill."/>
+      <reward type="hp" value="-1"></reward>
+    </option>
+  </Event>
+
+
+
+</Events>
