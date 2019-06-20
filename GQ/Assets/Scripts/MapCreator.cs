@@ -52,13 +52,11 @@ public class MapCreator : MonoBehaviour
                 instantiateNode(offset, 700, thisTier[1]);
                 break;
             case 3:
-
                 instantiateNode(offset, 300, thisTier[0]);
                 instantiateNode(offset, 500, thisTier[1]);
                 instantiateNode(offset, 700, thisTier[2]);
                 break;
             case 4:
-
                 instantiateNode(offset, 200, thisTier[0]);
                 instantiateNode(offset, 400, thisTier[1]);
                 instantiateNode(offset, 600, thisTier[2]);
@@ -91,15 +89,6 @@ public class MapCreator : MonoBehaviour
         }
         return thisTier;
     }
-
-    private static void colorCurrentNode(GameObject Loc)
-    {
-        if (Loc.GetComponent<Location>().locationNode == GameState.currentNode)
-        {
-            Loc.GetComponent<Image>().color = Color.cyan;
-        }
-    }
-
     private void instantiateNode(int offset, int ypos, MapNode node)
     {
         GameObject canvas = GameObject.FindGameObjectWithTag("Canvas");
@@ -107,6 +96,24 @@ public class MapCreator : MonoBehaviour
         newLocation = Instantiate(Location, new Vector3(150 + offset * 182, ypos, 0), Quaternion.identity);
         newLocation.transform.SetParent(canvas.transform);
         newLocation.GetComponent<Location>().locationNode = node;
-        colorCurrentNode(newLocation);
+        colorNode(newLocation);
+    }
+    private static void colorNode(GameObject Loc)
+    {
+        //current location is cyan
+        if (Loc.GetComponent<Location>().locationNode == GameState.currentNode)
+        {
+            Loc.GetComponent<Image>().color = Color.cyan;
+        }
+        //available locations are lighter green
+        else if (Map.EdgeExists(GameState.currentNode, Loc.GetComponent<Location>().locationNode))
+        {
+            Loc.GetComponent<Image>().color = Color.green;
+        }
+        //impossible locations on the current and next tier are gray
+        else if (Loc.GetComponent<Location>().locationNode.tier <= GameState.currentTier + 1)
+        {
+            Loc.GetComponent<Image>().color = Color.gray;
+        }
     }
 }

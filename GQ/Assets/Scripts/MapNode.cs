@@ -7,8 +7,7 @@ public class MapNode
 {
 
     public Event mapEvent { get; set; }
-    public int tier { get; set; }    
-    public string color { get; set; }
+    public int tier { get; set; }
 
     public static MapNode getInitialNode()
     {
