@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class MapCreator : MonoBehaviour
 {
@@ -46,55 +47,61 @@ public class MapCreator : MonoBehaviour
         GameObject newLocation2;
         GameObject newLocation3;
 
+
+        //This is a huge mess. Must refactor
         switch (thisTier.Count)
         {
-           
+
             case 1:
                 newLocation0 = Instantiate(Location, new Vector3(150 + offset * 182, 500, 0), Quaternion.identity);
                 newLocation0.transform.SetParent(canvas.transform);
                 newLocation0.GetComponent<Location>().locationNode = thisTier[0];
-
+                colorCurrentNode(newLocation0);
                 break;
             case 2:
                 newLocation0 = Instantiate(Location, new Vector3(150 + offset * 182, 300, 0), Quaternion.identity);
                 newLocation0.transform.SetParent(canvas.transform);
                 newLocation0.GetComponent<Location>().locationNode = thisTier[0];
-
+                colorCurrentNode(newLocation0);
                 newLocation1 = Instantiate(Location, new Vector3(150 + offset * 182, 700, 0), Quaternion.identity);
                 newLocation1.transform.SetParent(canvas.transform);
                 newLocation1.GetComponent<Location>().locationNode = thisTier[1];
+                colorCurrentNode(newLocation1);
                 break;
             case 3:
                 newLocation0 = Instantiate(Location, new Vector3(150 + offset * 182, 300, 0), Quaternion.identity);
                 newLocation0.transform.SetParent(canvas.transform);
                 newLocation0.GetComponent<Location>().locationNode = thisTier[0];
-
+                colorCurrentNode(newLocation0);
                 newLocation1 = Instantiate(Location, new Vector3(150 + offset * 182, 500, 0), Quaternion.identity);
                 newLocation1.transform.SetParent(canvas.transform);
                 newLocation1.GetComponent<Location>().locationNode = thisTier[1];
-
+                colorCurrentNode(newLocation1);
                 newLocation2 = Instantiate(Location, new Vector3(150 + offset * 182, 700, 0), Quaternion.identity);
                 newLocation2.transform.SetParent(canvas.transform);
                 newLocation2.GetComponent<Location>().locationNode = thisTier[2];
+                colorCurrentNode(newLocation2);
                 break;
             case 4:
                 newLocation0 = Instantiate(Location, new Vector3(150 + offset * 182, 200, 0), Quaternion.identity);
                 newLocation0.transform.SetParent(canvas.transform);
                 newLocation0.GetComponent<Location>().locationNode = thisTier[0];
-
+                colorCurrentNode(newLocation0);
                 newLocation1 = Instantiate(Location, new Vector3(150 + offset * 182, 400, 0), Quaternion.identity);
                 newLocation1.transform.SetParent(canvas.transform);
                 newLocation1.GetComponent<Location>().locationNode = thisTier[1];
-
+                colorCurrentNode(newLocation1);
                 newLocation2 = Instantiate(Location, new Vector3(150 + offset * 182, 600, 0), Quaternion.identity);
                 newLocation2.transform.SetParent(canvas.transform);
                 newLocation2.GetComponent<Location>().locationNode = thisTier[2];
-
-                newLocation2 = Instantiate(Location, new Vector3(150 + offset * 182, 800, 0), Quaternion.identity);
-                newLocation2.transform.SetParent(canvas.transform);
-                newLocation2.GetComponent<Location>().locationNode = thisTier[3];
+                colorCurrentNode(newLocation2);
+                newLocation3 = Instantiate(Location, new Vector3(150 + offset * 182, 800, 0), Quaternion.identity);
+                newLocation3.transform.SetParent(canvas.transform);
+                newLocation3.GetComponent<Location>().locationNode = thisTier[3];
+                colorCurrentNode(newLocation3);
                 break;
         }
+        
 
 
     }
@@ -119,5 +126,13 @@ public class MapCreator : MonoBehaviour
             currentNode = Map.nodes.ElementAt(i);
         }
         return thisTier;
+    }
+
+    private static void colorCurrentNode(GameObject Loc)
+    {
+        if (Loc.GetComponent<Location>().locationNode == GameState.currentNode)
+        {
+            Loc.GetComponent<Image>().color = Color.cyan;
+        }
     }
 }
