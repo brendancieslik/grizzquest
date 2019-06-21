@@ -16,10 +16,9 @@ public class EventUI
     Event currentEvent { get; set; }
     private EventOutcome selectedOutcome;
 
-    public EventUI(Event e)
+    public EventUI()
     {
-
-        currentEvent = e;
+        currentEvent = GameState.currentEvent;
     }
 
     public void displayEvent()
@@ -79,7 +78,9 @@ public class EventUI
     public void SelectOption(int selection)
     {
         currentEvent.hasChosen = true;
+
         selectedOutcome = currentEvent.options.ElementAt(selection).getRandomOutcome();
+
     }
 
     public void KeyPress(int selection)

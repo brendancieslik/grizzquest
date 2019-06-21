@@ -5,23 +5,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 
+
+
 public class AdventureGame : MonoBehaviour
 {
     EventUI eventUI;
     [SerializeField] Text textComponent;
-    [SerializeField] State startingState;
-    
+    //[SerializeField] State startingState;
     State state;
 
     // Use this for initialization
     void Start()
     {
-        state = startingState;
+        //state = startingState;
         //textComponent.text = state.GetStateStory();
         
-        LoadInitialData();        
-        Event currentEvent = Event.getRandomEvent();
-        eventUI = new EventUI(currentEvent);
+        LoadInitialData();
+        eventUI = new EventUI();
     }
 
     // Update is called once per frame
